@@ -13,6 +13,9 @@ var policy = function(bucket, acl) {
   c.push({success_action_status: '201'})
   c.push(['starts-with', '$key', ''])
   c.push(['starts-with', '$Content-Type', ''])
+  c.push([ 'starts-with', '$x-amz-meta-wdth', '' ])
+  c.push([ 'starts-with', '$x-amz-meta-hght', '' ])
+  c.push([ 'starts-with', '$x-amz-meta-ffct', '' ])
 
   var s3Policy = JSON.stringify({
     expiration: e,
